@@ -2,7 +2,9 @@ import React from 'react'
 
 import { MOVIEDB_IMAGE_URL } from '../../api/fetchMovies'
 
+
 const MovieListItem = ({movie}) => {
+
     return (
         <a href={'/movie/' + movie.id}>
             <div className="movie-list-item">

@@ -8,14 +8,16 @@ import { selectSearchState } from '../layout/search/searchSlice'
 
 //Components
 import MovieListItem from './movieListItem'
+import FilterButtons from './filterButtons'
 
 //scss
 import './movieList.scss'
 
 const Movies = () => {
-    const movieList = useSelector(selectMoviesState);
     const dispatch = useDispatch();
     const stableDispatch = useCallback(dispatch, [dispatch])
+
+    const movieList = useSelector(selectMoviesState);
     const search = useSelector(selectSearchState)
 
     useEffect(() => {
@@ -32,6 +34,7 @@ const Movies = () => {
 
     return (
         <div className="movie-list">
+            <FilterButtons />
             {(movieList.length) ?
                 <ul>
                     {

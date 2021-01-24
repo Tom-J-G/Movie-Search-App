@@ -2,10 +2,29 @@
     ul {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-content: space-between;
     }
 
     .center {
         text-align: center
+    }
+
+    .filters {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 30px;
+        button {
+            margin-left: 20px;
+            border: 0;
+            background-color: #4DA8DA;
+            padding: 6px 12px;
+            border-radius: 12px;
+            color:  #EEFBFB;
+
+            &.on {
+                background-color: #007CC7; 
+            }
+        }
     }
 }
 
@@ -22,6 +41,7 @@ li {
     .movie-list-item {
         max-width: 220px;
         text-align: center;
+        margin: 0 auto;
         margin-bottom: 30px;
         background-color: #203647;
         transition: transform 200ms cubic-bezier(0.34, 2, 0.6, 1),
@@ -40,4 +60,6 @@ li {
             height: 90px;
         }
     }
+
+    
 }
