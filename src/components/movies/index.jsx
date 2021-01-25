@@ -27,6 +27,7 @@ const Movies = () => {
             })
         } else {
             getMovies({filter: 'popular'}).then(({data}) => {
+                console.log(data.results)
                 stableDispatch(setMovies(data.results))
             })
         }

@@ -14,6 +14,7 @@ const MovieListItem = ({movie}) => {
                     <p>{//movie.genres.map((x) => x.name)
                     }
                     </p>
+                    <div className="rating">{movie.vote_average}</div>
                 </div>
             </div>
         </a>

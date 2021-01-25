@@ -9,6 +9,10 @@
             padding-top: 30px;
             padding-left: 20px;
             padding-right: 20px;
+            position: relative;
+            h1 {
+                font-size: 2.25rem;
+            }
             .genres {
                 margin-top: 16px;
                 div {
@@ -21,6 +25,19 @@
                 }
             }
 
+            .rating {
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                border: 2px solid #4DA8DA;
+                padding: 8px;
+                border-radius: 50%;
+            }
+
+            .tagline {
+                margin-bottom: 0.5rem;
+                font-weight: bolder;
+            }
         }
         .image {
             max-width: 300px;
@@ -31,7 +48,7 @@
 .actors, .recommendations {
     background-color: #fff;
     color: 	#12232E;
-    padding: 1em 0;
+    padding: 1.5rem 0;
     h2 {
         padding-left: 18px;
         margin-bottom: 0.5em;
