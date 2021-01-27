@@ -6,8 +6,8 @@ const Recommendations = ({ movieId }) => {
     const [recommendations, setRecommendations] = useState([])
 
     useEffect(() => {
-        getRecommendations(movieId).then(data => {
-            setRecommendations(data.data.results)
+        getRecommendations(movieId).then(({data}) => {
+            setRecommendations(data.results)
         })
     }, [movieId])
 

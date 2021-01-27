@@ -51,12 +51,13 @@
     padding: 1.5rem 0;
     h2 {
         padding-left: 18px;
-        margin-bottom: 0.5em;
+        margin-bottom: 1rem;
         color: #12232E;
     }
     ul {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        margin-bottom: 0;
     }
 
     li {
@@ -98,5 +99,14 @@
             padding: 0 6px;
             font-size: 14px;
         }
+    }
+}
+
+.movie-images {
+    background-color: rgba(32, 54, 71, 0.7);
+    padding-top: 1rem;
+    h2 {
+        padding-left: 18px;
+        margin-bottom: 1rem
     }
 }

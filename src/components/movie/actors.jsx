@@ -13,8 +13,8 @@ const ActorList = ({movieId}) => {
     console.log(movieId)
 
     useEffect(() => {
-        getActors(movieId).then(data => {
-            stableDispatch( setActorList(data.data.cast))
+        getActors(movieId).then(({data}) => {
+            stableDispatch( setActorList(data.cast))
         })
     }, [stableDispatch, movieId])
 

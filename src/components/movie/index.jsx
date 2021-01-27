@@ -10,6 +10,7 @@ import { setSearch } from '../layout/search/searchSlice'
 import ActorList from './actors'
 import MovieInfo from './movieInfo'
 import Recommendations from './recommendations'
+import MovieImages from './movieImages'
 
 //scss
 import './movie.scss'
@@ -23,12 +24,12 @@ const Movie = () => {
 
     useEffect(() => {
         stableDispatch(setSearch(''))
-        getMovie(stableMovieId).then(data => {
+        getMovie(stableMovieId).then(({data}) => {
             stableDispatch(setMovie(data))
         })
     }, [stableDispatch, stableMovieId])
 
-    const movieInfo = movie.data
+    const movieInfo = movie
     if(Object.keys(movie).length === 0) {
         return (
             <div>
@@ -39,6 +40,7 @@ const Movie = () => {
             <div className="movie-info">
                 <MovieInfo movieInfo={movieInfo} />
                 <ActorList movieId={stableMovieId} />
+                <MovieImages movieId={stableMovieId} />
                 <Recommendations movieId={stableMovieId} />
             </div>
         )
