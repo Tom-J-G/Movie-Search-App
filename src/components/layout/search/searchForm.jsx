@@ -17,13 +17,11 @@ const SearchForm = () => {
 
     const onChangeHandler = e => {
         const value = e.target.value
-        dispatch(setSearch(value))
+        console.log(value)
+        dispatch(setSearch(value.toLowerCase()))
         if(value.length > 2){  
-            if(pathname.includes('movie')) { history.push('/') } else {
-                searchMovies({query: search, page: 1}).then(data => {
-                    dispatch(setMovies(data.data.results))
-                })
-            }
+            console.log(value.length)
+            if(pathname.includes('movie')) { history.push('/') }
             
         }
     }

@@ -20,7 +20,7 @@ const MovieInfo = ({ movieInfo }) => {
                 )}
                 
                 </>: <></>}</div>
-                <div className="rating">{movieInfo.vote_average}</div>
+                <div className="rating">{(movieInfo.vote_average.toString().length === 1) ? movieInfo.vote_average + '.0': movieInfo.vote_average}</div>
             </div>            
         </div>
     )

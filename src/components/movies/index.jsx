@@ -21,7 +21,8 @@ const Movies = () => {
     const search = useSelector(selectSearchState)
 
     useEffect(() => {
-        if(search.length) {
+        if(search.length > 2) {
+            console.log('test')
             searchMovies({query: search, page: 1}).then(data => {
                 stableDispatch(setMovies(data.data.results))
             })

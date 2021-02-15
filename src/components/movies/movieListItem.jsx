@@ -8,7 +8,7 @@ const MovieListItem = ({movie}) => {
     return (
         <a href={'/movie/' + movie.id}>
             <div className="movie-list-item">
-                <img src={MOVIEDB_IMAGE_URL.medium + movie.poster_path}  alt={movie.title} />
+                {(movie.poster_path === null) ? <div className="no-photo">No Photo<br/>Available</div> : <img src={MOVIEDB_IMAGE_URL.medium + movie.poster_path}  alt={movie.title} />}
                 <div className="movie-list-item-info">
                     <div>{movie.title}</div>
                     <p>{//movie.genres.map((x) => x.name)
