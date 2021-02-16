@@ -20,9 +20,7 @@ const SearchForm = () => {
         console.log(value)
         dispatch(setSearch(value.toLowerCase()))
         if(value.length > 2){  
-            console.log(value.length)
-            if(pathname.includes('movie')) { history.push('/') }
-            
+            if(pathname.includes('movie')) history.push('/')  
         }
     }
     

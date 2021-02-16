@@ -112,6 +112,9 @@ li {
        .movie-list-item {
             max-width: 200px;
        }
+       .no-photo {
+           height: 300px;
+       }
     }
 
     @media only screen and (max-width: 576px) {
@@ -120,6 +123,9 @@ li {
             .movie-list-item-info {
                 height: 118px;
             }
+        }
+        .no-photo {
+            height: 225px;
         }
     }
 }
