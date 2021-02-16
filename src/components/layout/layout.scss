@@ -32,8 +32,7 @@ ul {
 #wrapper {
     max-width: 1140px;
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding: 0 2rem;
     margin: 0 auto;
     min-height: 100vh;
     display: flex;
@@ -80,13 +79,13 @@ footer {
 }
 
 
-@media screen and (min-width: 992px) {
+@media only screen and (max-width: 992px) {
     .wrapper {
         max-width: 960px;
     }
 }
 
-@media screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
     .wrapper {
         max-width: 720px;
     }
