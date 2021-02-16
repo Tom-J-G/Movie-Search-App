@@ -26,6 +26,28 @@
             }
         }
     }
+
+    @media only screen and (max-width: 992px) {
+        ul {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        ul {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media only screen and (max-width: 576px) {
+        .filters {
+            justify-content: center;
+            button {
+                border-radius: 0;
+                margin-left: 0;
+            }
+        }
+    } 
 }
 
 li {
@@ -70,7 +92,7 @@ li {
             width: 100%;
         }
         .movie-list-item-info {
-            padding: 1em 0;
+            padding: 1em 0.3rem;
             height: 90px; 
         }
         .rating {
@@ -86,5 +108,18 @@ li {
             transition: opacity .5s ease-out;
         }
     }
-    
+    @media only screen and (max-width: 992px) {
+       .movie-list-item {
+            max-width: 200px;
+       }
+    }
+
+    @media only screen and (max-width: 576px) {
+        .movie-list-item {
+            max-width: 150px;
+            .movie-list-item-info {
+                height: 118px;
+            }
+        }
+    }
 }
