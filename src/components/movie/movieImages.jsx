@@ -4,7 +4,6 @@ import { getMovieImages} from '../../api/fetchMovies'
 
 import ImageCarousel from '../../utils/carousel'
 
-
 const MovieImages = ({movieId}) => {
     const [images, setImages] = useState([])
 
@@ -13,7 +12,7 @@ const MovieImages = ({movieId}) => {
             console.log(data.backdrops)
             setImages(data.backdrops)
         })
-    }, [])
+    }, [movieId])
 
     return (
         <div className="movie-images">

@@ -1,18 +1,6 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { getMovies } from '../../api/fetchMovies'
-import { setMovies } from './movieListSlice'
+import React from 'react'
 
-const FilterButtons = () => {
-    const dispatch = useDispatch()
-    const [filter, setFilter] = useState('popular')
-
-    const filterSearch = theFilter => {
-        setFilter(theFilter)
-        getMovies({filter: theFilter}).then(({data}) => {
-            dispatch(setMovies(data.results))
-        })
-    }
+const FilterButtons = ({filterSearch, filter}) => {
 
     return (
         <div className="filters">
