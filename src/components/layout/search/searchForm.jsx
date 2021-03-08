@@ -1,11 +1,11 @@
 import React from 'react'
 import { Input } from 'reactstrap'
 import { useDispatch, useSelector } from 'react-redux';
-import { searchMovies } from '../../../api/fetchMovies'
+//import { searchMovies } from '../../../api/fetchMovies'
 import { useLocation, useHistory } from 'react-router-dom';
 
 //redux slice
-import { setMovies } from '../../movies/movieListSlice';
+//import { setMovies } from '../../movies/movieListSlice';
 import { setSearch, selectSearchState } from './searchSlice'
 
 const SearchForm = () => {

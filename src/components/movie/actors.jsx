@@ -1,10 +1,11 @@
-import React, {useEffect, useCallback, useState} from 'react'
+import React, {useEffect, useCallback, useState, useRef} from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 
 import { getActors, MOVIEDB_IMAGE_URL } from '../../api/fetchMovies'
 import {setActorList, selectActorListState} from './actorListSlice'
 
 const ActorList = ({movieId}) => {
+    const initialMount = useRef(true)
     const dispatch = useDispatch()
     const actorList = useSelector(selectActorListState)
     const stableDispatch = useCallback(dispatch, [dispatch])
@@ -13,9 +14,12 @@ const ActorList = ({movieId}) => {
     console.log(movieId)
 
     useEffect(() => {
-        getActors(movieId).then(({data}) => {
-            stableDispatch( setActorList(data.cast))
-        })
+        if(initialMount.current) {
+            initialMount.current = false
+            getActors(movieId).then(({data}) => {
+                stableDispatch( setActorList(data.cast))
+            })
+        }
     }, [stableDispatch, movieId])
 
     const size = 6

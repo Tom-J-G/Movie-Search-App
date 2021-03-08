@@ -1,4 +1,4 @@
-import React, {useEffect, useCallback} from 'react'
+import React, {useEffect, useCallback, useRef} from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
@@ -16,6 +16,7 @@ import MovieImages from './movieImages'
 import './movie.scss'
 
 const Movie = () => {
+    const initialMount = useRef(true)
     const { movie_id } = useParams()
     const movie = useSelector(selectMovieState);
     const dispatch = useDispatch();
@@ -23,10 +24,14 @@ const Movie = () => {
     const stableMovieId = useCallback(movie_id, [movie_id])
 
     useEffect(() => {
-        stableDispatch(setSearch(''))
-        getMovie(stableMovieId).then(({data}) => {
-            stableDispatch(setMovie(data))
-        })
+        if(initialMount.current) {
+            initialMount.current = false
+            stableDispatch(setSearch(''))
+            console.log(stableMovieId)
+            getMovie(stableMovieId).then(({data}) => {
+                stableDispatch(setMovie(data))
+            })
+        }
     }, [stableDispatch, stableMovieId])
 
     const movieInfo = movie
